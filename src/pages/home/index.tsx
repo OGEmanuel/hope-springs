@@ -1,9 +1,17 @@
+import Banner from '#/components/banner';
+import Continuum from './continuum';
+import HeroHome from './hero';
+import Why from './why';
+
 const HomePage = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <HeroHome />
+      <Continuum />
+      <Why />
+      <Banner />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
