@@ -2,22 +2,22 @@ import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+} from '@tanstack/react-router';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
+import { TanStackDevtools } from '@tanstack/react-devtools';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
-import TanStackQueryProvider from '../integrations/tanstack-query/root-provider'
+import TanStackQueryProvider from '../integrations/tanstack-query/root-provider';
 
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
+import TanStackQueryDevtools from '../integrations/tanstack-query/devtools';
 
-import appCss from '../styles.css?url'
+import appCss from '../styles.css?url';
 
-import type { QueryClient } from '@tanstack/react-query'
+import type { QueryClient } from '@tanstack/react-query';
 
 interface MyRouterContext {
-  queryClient: QueryClient
+  queryClient: QueryClient;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
@@ -32,17 +32,17 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         title: 'Hope Springs | Behavioral Health',
+        description:
+          'We provide trauma-informed outpatient mental health, psychiatric rehabilitation, and substance use treatment services for adolescents and adults.',
       },
     ],
     links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
+      { rel: 'stylesheet', href: appCss },
+      { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -50,10 +50,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="font-sans antialiased wrap-anywhere bg-background">
+      <body className="bg-background font-sans wrap-anywhere antialiased">
         <TanStackQueryProvider>
           <Header />
-          <main>{children}</main>
+          <main className="pt-22">{children}</main>
           <Footer />
           <TanStackDevtools
             config={{
@@ -71,5 +71,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

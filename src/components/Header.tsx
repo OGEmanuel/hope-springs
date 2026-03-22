@@ -11,7 +11,7 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header className="border-border flex justify-center border-b">
+    <header className="border-border fixed z-50 flex w-full justify-center border-b bg-white">
       <nav className="flex w-full max-w-360 items-center justify-between px-30 py-5">
         <Link to="/" className="flex basis-full justify-start">
           <LogoFull />
@@ -34,7 +34,7 @@ export default function Header() {
   );
 }
 
-const ContactBlock = (props: { className?: string }) => {
+export const ContactBlock = (props: { className?: string }) => {
   const { className } = props;
   return (
     <div className={cn('flex basis-full justify-end gap-4', className)}>

@@ -30,7 +30,7 @@ export default function Footer() {
           <ul>
             Company
             {companyLinks.map(links => (
-              <li>
+              <li key={links.name}>
                 <Link to={links.href}>{links.name}</Link>
               </li>
             ))}
@@ -38,7 +38,7 @@ export default function Footer() {
           <ul>
             Resources
             {resourcesLinks.map(links => (
-              <li>
+              <li key={links.name}>
                 <Link to={links.href}>{links.name}</Link>
               </li>
             ))}
@@ -46,7 +46,7 @@ export default function Footer() {
           <ul>
             Contact
             {contactLinks.map(links => (
-              <li>
+              <li key={links.name}>
                 <Link to={links.href}>{links.name}</Link>
               </li>
             ))}
