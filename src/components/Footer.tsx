@@ -4,7 +4,7 @@ import LogoFull from './jsx-icons/logo-full';
 const companyLinks = [
   { name: 'About us', href: '/about' },
   { name: 'Contact us', href: '/contact' },
-  { name: 'Careers', href: '/#' },
+  { name: 'Careers', href: '/careers' },
 ];
 
 const resourcesLinks = [

@@ -55,12 +55,12 @@ export default ContactPage;
 export const ContactCard = () => {
   return (
     <div className="flex flex-col">
-      <a href="tel:2409607515" className="leading-7">
+      <a href="tel:2409607515" className="w-max leading-7">
         📞 240-960-7515
       </a>
       <a
         href="mailto:info@hopespringsbehavioralhealth.com"
-        className="leading-7"
+        className="w-max leading-7"
       >
         📧 info@hopespringsbehavioralhealth.com
       </a>

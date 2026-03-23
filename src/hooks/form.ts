@@ -6,6 +6,7 @@ import {
   SubscribeButton,
   TextArea,
   TextField,
+  UploadFileField,
 } from '../components/form-components';
 import { fieldContext, formContext } from './form-context';
 
@@ -15,6 +16,7 @@ export const { useAppForm } = createFormHook({
     PhoneField,
     Select,
     TextArea,
+    UploadFileField,
   },
   formComponents: {
     SubscribeButton,
