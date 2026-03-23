@@ -9,7 +9,7 @@ const HomePage = () => {
       <HeroHome />
       <Continuum />
       <Why />
-      <Banner className="mb-10" />
+      <Banner className="mx-4 mb-10 md:mx-8 xl:mx-30" />
     </>
   );
 };

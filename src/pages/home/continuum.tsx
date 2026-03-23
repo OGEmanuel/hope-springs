@@ -33,7 +33,7 @@ const continuumData = [
 const Continuum = () => {
   return (
     <section className="bg-extra-2 flex justify-center">
-      <div className="flex w-full max-w-360 flex-col gap-20 px-30 py-30 text-white">
+      <div className="flex w-full max-w-360 flex-col gap-16 px-4 py-16 text-white md:gap-20 md:px-8 md:py-20 lg:py-30 xl:px-30">
         <Heading
           header="A Full Continuum of Outpatient Care"
           description="We offer a range of structured programs designed to meet individuals
@@ -57,20 +57,24 @@ const ContinuumCard = (props: { data: (typeof continuumData)[0] }) => {
   const { data } = props;
 
   return (
-    <div className="flex gap-6 odd:flex-row-reverse">
-      <div className="flex w-max max-w-174.25 flex-col gap-13.25">
-        <div className="h-120 w-full rounded-[8px] bg-white"></div>
-        <div className="flex flex-col gap-5">
-          <h3 className="text-[2rem]/10 font-medium">{data.header}</h3>
-          <p className="leading-7">{data.description}</p>
+    <div className="flex gap-10 max-lg:flex-col lg:gap-6 lg:odd:flex-row-reverse">
+      <div className="flex w-full flex-col gap-5 lg:w-max lg:max-w-174.25 lg:gap-13.25">
+        <div className="h-60 w-full rounded-[8px] bg-white sm:h-80 md:h-120"></div>
+        <div className="flex flex-col gap-2 md:gap-5">
+          <h3 className="text-xl/7 font-medium md:text-[2rem]/10">
+            {data.header}
+          </h3>
+          <p className="leading-7 max-md:text-sm/6">{data.description}</p>
         </div>
       </div>
-      <div className="px-10">
-        <div className="flex w-max max-w-100 flex-col gap-13.25">
-          <div className="h-80 w-full rounded-[8px] bg-white"></div>
-          <div className="flex flex-col gap-5">
-            <h4 className="text-[1.75rem]/9 font-medium">{data.subHeader}</h4>
-            <p className="leading-7">{data.subDescription}</p>
+      <div className="lg:px-10">
+        <div className="flex w-full flex-col gap-5 lg:w-max lg:max-w-100 lg:gap-13.25">
+          <div className="h-60 w-full rounded-[8px] bg-white sm:h-80 md:max-lg:h-120"></div>
+          <div className="flex flex-col gap-2 md:gap-5">
+            <h4 className="text-xl/7 font-medium md:text-[1.75rem]/9">
+              {data.subHeader}
+            </h4>
+            <p className="leading-7 max-md:text-sm/6">{data.subDescription}</p>
           </div>
         </div>
       </div>
