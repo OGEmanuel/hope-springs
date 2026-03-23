@@ -7,7 +7,7 @@ const Heading = (props: {
   header?: string;
   description: string;
   cta?: boolean;
-  variant?: 'h1' | 'h2' | 'h4';
+  variant?: 'h1' | 'h2' | 'h4' | 'h5';
 }) => {
   const { className, header, description, cta, variant } = props;
 
@@ -18,8 +18,10 @@ const Heading = (props: {
           <h1 className="text-5xl/[56px]">{header}</h1>
         ) : variant === 'h2' ? (
           <h2 className="text-5xl/[56px]">{header}</h2>
-        ) : (
+        ) : variant === 'h4' ? (
           <h4 className="text-[1.75rem]/9">{header}</h4>
+        ) : (
+          <h5 className="text-xl/7">{header}</h5>
         )}
         <p className="leading-7">{description}</p>
       </div>

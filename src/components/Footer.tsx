@@ -8,7 +8,7 @@ const companyLinks = [
 ];
 
 const resourcesLinks = [
-  { name: 'Getting started', href: '/get-started' },
+  { name: 'Getting started', href: '/getting-started' },
   { name: 'FAQs', href: '/faqs' },
 ];
 
