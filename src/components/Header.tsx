@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import LogoFull from './jsx-icons/logo-full';
-import { Button } from './ui/button';
-import { cn } from '#/lib/utils';
+import { ContactBlock } from './Heading';
 
 const navLinks = [
   { name: 'About us', href: '/about' },
@@ -21,7 +20,7 @@ export default function Header() {
             <li key={link.name}>
               <Link
                 to={link.href}
-                className="text-extra p-2 leading-6 font-medium"
+                className="text-extra [.active]:text-tertiary p-2 leading-6 font-medium transition-colors"
               >
                 {link.name}
               </Link>
@@ -33,17 +32,3 @@ export default function Header() {
     </header>
   );
 }
-
-export const ContactBlock = (props: { className?: string }) => {
-  const { className } = props;
-  return (
-    <div className={cn('flex basis-full justify-end gap-4', className)}>
-      <Button variant={'outline'} asChild>
-        <a href="tel:2409607515">Call 240-960-7515</a>
-      </Button>
-      <Button asChild>
-        <Link to="/contact">Contact us</Link>
-      </Button>
-    </div>
-  );
-};

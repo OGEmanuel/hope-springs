@@ -5,12 +5,12 @@ import Why from './why';
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <HeroHome />
       <Continuum />
       <Why />
       <Banner />
-    </div>
+    </>
   );
 };
 

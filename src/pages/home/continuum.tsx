@@ -1,3 +1,5 @@
+import Heading from '#/components/Heading';
+
 const continuumData = [
   {
     id: 1,
@@ -32,17 +34,15 @@ const Continuum = () => {
   return (
     <section className="bg-extra-2 flex justify-center">
       <div className="flex w-full max-w-360 flex-col gap-20 px-30 py-30 text-white">
-        <div className="flex w-full max-w-160 flex-col gap-6 font-medium">
-          <h2 className="text-5xl/[56px]">
-            A Full Continuum of Outpatient Care
-          </h2>
-          <p className="leading-7">
-            We offer a range of structured programs designed to meet individuals
+        <Heading
+          header="A Full Continuum of Outpatient Care"
+          description="We offer a range of structured programs designed to meet individuals
             at their current level of need — from weekly outpatient therapy to
             intensive multi-session treatment and community-based
-            rehabilitation.
-          </p>
-        </div>
+            rehabilitation."
+          variant="h2"
+          className="[&>div]:text-start [&>div]:text-white"
+        />
         {continuumData.map(data => (
           <ContinuumCard data={data} key={data.id} />
         ))}
