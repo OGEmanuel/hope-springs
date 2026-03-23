@@ -33,7 +33,7 @@ const whyData = [
 const Why = () => {
   return (
     <section className="flex justify-center">
-      <div className="flex w-full max-w-360 flex-col items-center gap-20 p-30">
+      <div className="flex w-full max-w-360 flex-col items-center gap-10 px-4 py-20 md:gap-20 md:px-8 xl:px-30 xl:py-30">
         <Heading
           header="Why Choose Hope Springs Behavioral Health"
           description="We prioritize physical and emotional safety, build trust through
