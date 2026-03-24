@@ -35,32 +35,36 @@ const approachData = [
 
 const Approach = () => {
   return (
-    <section className="bg-extra-2 mb-51 flex flex-col items-center gap-30 rounded-[8px] px-20 pt-20 pb-30 text-white shadow-[0px_28px_48px_0px_#05201026]">
+    <section className="bg-extra-2 mb-20 flex flex-col items-center gap-16 px-4 pt-20 pb-20 text-white max-md:-mx-4 sm:pb-30 md:gap-30 md:rounded-[8px] md:px-20 md:shadow-[0px_28px_48px_0px_#05201026] lg:mb-51">
       <Heading
         header="Our Approach to Care"
         description="Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
         variant="h2"
         className="[&>div]:gap-6 [&>div]:text-white"
       />
-      <div className="grid grid-cols-2 gap-y-16">
+      <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
         {approachData.slice(0, 2).map((data, i) => (
           <ApproachCard
             key={data.id}
             data={data}
             className={cn(
-              'border-primary',
-              i === 0 ? 'border-r-[0.5px] pr-16' : 'border-l-[0.5px] pl-16',
+              'border-primary max-md:border-primary max-md:border-b max-md:pb-12',
+              i === 0
+                ? 'md:border-r-[0.5px] md:pr-16'
+                : 'md:border-l-[0.5px] md:pl-16',
             )}
           />
         ))}
-        <hr className="border-primary col-span-2" />
+        <hr className="border-primary col-span-2 max-md:hidden" />
         {approachData.slice(2, 4).map((data, i) => (
           <ApproachCard
             key={data.id}
             data={data}
             className={cn(
-              'border-primary',
-              i === 0 ? 'border-r-[0.5px] pr-16' : 'border-l-[0.5px] pl-16',
+              'border-primary max-md:border-primary last:border-b-0 max-md:border-b max-md:pb-12',
+              i === 0
+                ? 'md:border-r-[0.5px] md:pr-16'
+                : 'md:border-l-[0.5px] md:pl-16',
             )}
           />
         ))}
@@ -78,13 +82,13 @@ const ApproachCard = (props: {
   const { data, className } = props;
 
   return (
-    <div className={cn('flex flex-col items-center gap-4', className)}>
+    <div className={cn('flex flex-col items-center gap-2 md:gap-4', className)}>
       {data.icon}
       <Heading
         header={data.header}
         description={data.description}
         variant="h4"
-        className="[&>div]:text-white"
+        className="[&>div]:text-white max-md:[&>div]:gap-2"
       />
     </div>
   );

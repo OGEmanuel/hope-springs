@@ -31,7 +31,7 @@ const supportData = [
 
 const Support = () => {
   return (
-    <section className="pb-30">
+    <section className="pb-10 max-md:mb-10 md:pb-30">
       <BorderedContent
         header="We support individuals across behavioral health conditions"
         description="We work with individuals newly seeking care, transitioning from treatment, or managing long-term mental health conditions."
