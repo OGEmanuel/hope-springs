@@ -23,18 +23,39 @@ interface MyRouterContext {
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   head: () => ({
     meta: [
-      {
-        charSet: 'utf-8',
-      },
+      { charSet: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        content:
+          'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
       },
+      { title: 'Hope Springs | Behavioral Health' },
+      { property: 'og:title', content: 'Hope Springs' },
       {
-        title: 'Hope Springs | Behavioral Health',
-        description:
+        property: 'og:description',
+        content:
           'We provide trauma-informed outpatient mental health, psychiatric rehabilitation, and substance use treatment services for adolescents and adults.',
       },
+      {
+        property: 'og:image',
+        content:
+          'https://res.cloudinary.com/dl56ef7sx/image/upload/v1774318344/Screenshot_2026-03-24_at_03.11.57_vn61kq.png',
+      },
+      { property: 'og:url', content: 'https://hopesprings.com' },
+      { property: 'og:type', content: 'website' },
+      { name: 'twitter:title', content: 'Hope Springs' },
+      {
+        name: 'twitter:description',
+        content:
+          'We provide trauma-informed outpatient mental health, psychiatric rehabilitation, and substance use treatment services for adolescents and adults.',
+      },
+      {
+        name: 'twitter:image',
+        content:
+          'https://res.cloudinary.com/dl56ef7sx/image/upload/v1774318344/Screenshot_2026-03-24_at_03.11.57_vn61kq.png',
+      },
+      { name: 'twitter:url', content: 'https://hopesprings.com' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
