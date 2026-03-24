@@ -63,7 +63,7 @@ const Faqs = () => {
           value={`item-${data.id}`}
           className="text-primary flex flex-col gap-3 border-black/10"
         >
-          <AccordionTrigger className="p-0 text-xl/7 font-medium hover:no-underline">
+          <AccordionTrigger className="p-0 text-base/6 font-medium hover:no-underline md:text-xl/7">
             {data.question}
           </AccordionTrigger>
           <AccordionContent className="leading-7">
