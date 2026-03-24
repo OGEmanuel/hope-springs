@@ -3,6 +3,9 @@ import { Link } from '@tanstack/react-router';
 import { Button } from './ui/button';
 import PhoneIcon from './jsx-icons/phone-icon';
 import MenuHamburger from './jsx-icons/menu-hamburger';
+import { MobileNav } from './Header';
+import { useState } from 'react';
+import CloseIcon from './jsx-icons/close';
 
 const Heading = (props: {
   className?: string;
@@ -34,43 +37,58 @@ const Heading = (props: {
 
 export default Heading;
 
-export const ContactBlock = (props: { className?: string; nav?: boolean }) => {
-  const { className, nav } = props;
+export const ContactBlock = (props: {
+  className?: string;
+  nav?: boolean;
+  wrapperClassName?: string;
+}) => {
+  const { className, nav, wrapperClassName } = props;
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="flex basis-full items-center justify-end gap-1">
-      <div
-        className={cn(
-          'flex gap-4',
-          className,
-          nav && 'gap-2 max-md:items-center',
-        )}
-      >
-        <Button
-          variant={'outline'}
-          asChild
+    <div
+      className={cn(
+        'flex basis-full items-center justify-end gap-1',
+        wrapperClassName,
+      )}
+    >
+      {!open && (
+        <div
           className={cn(
-            nav && "max-md:size-10 [&_svg:not([class*='size-'])]:size-5",
+            'flex gap-4',
+            className,
+            nav && 'gap-2 max-md:items-center',
           )}
         >
-          {nav ? (
-            <a href="tel:2409607515">
-              <span className="max-lg:hidden">Call 240-960-7515</span>
-              <span className="lg:hidden">
-                <PhoneIcon />
-              </span>
-            </a>
-          ) : (
-            <a href="tel:2409607515">Call 240-960-7515</a>
-          )}
-        </Button>
-        <Button asChild className={cn(nav && 'max-md:h-10')}>
-          <Link to="/contact">Contact us</Link>
-        </Button>
-      </div>
+          <Button
+            variant={'outline'}
+            asChild
+            className={cn(
+              nav && "max-md:size-10 [&_svg:not([class*='size-'])]:size-5",
+            )}
+          >
+            {nav ? (
+              <a href="tel:2409607515">
+                <span className="max-lg:hidden">Call 240-960-7515</span>
+                <span className="lg:hidden">
+                  <PhoneIcon />
+                </span>
+              </a>
+            ) : (
+              <a href="tel:2409607515">Call 240-960-7515</a>
+            )}
+          </Button>
+          <Button asChild className={cn(nav && 'max-md:h-10')}>
+            <Link to="/contact">Contact us</Link>
+          </Button>
+        </div>
+      )}
       {nav && (
-        <span className="p-2.5 lg:hidden">
-          <MenuHamburger />
-        </span>
+        <MobileNav open={open} onSetOpen={setOpen}>
+          <span className="block p-2.5 lg:hidden">
+            {open ? <CloseIcon /> : <MenuHamburger />}
+          </span>
+        </MobileNav>
       )}
     </div>
   );
