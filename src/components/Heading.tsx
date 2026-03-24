@@ -21,7 +21,7 @@ const Heading = (props: {
         ) : variant === 'h2' ? (
           <h2 className="text-[2rem]/10 md:text-5xl/[56px]">{header}</h2>
         ) : variant === 'h4' ? (
-          <h4 className="text-[1.75rem]/9">{header}</h4>
+          <h4 className="text-xl/7 md:text-[1.75rem]/9">{header}</h4>
         ) : (
           <h5 className="text-xl/7">{header}</h5>
         )}

@@ -3,7 +3,7 @@ import GoldBadge from '#/components/jsx-icons/gold-badge';
 
 const Quality = () => {
   return (
-    <section className="flex flex-col items-center gap-20 pb-40">
+    <section className="flex flex-col items-center gap-12 pb-20 md:gap-20 md:pb-40">
       <Heading
         header="Quality, Compliance & Accountability"
         description="As a Maryland-licensed and CARF-accredited provider, we operate under structured quality improvement processes that include outcome tracking, clinical supervision audits, client satisfaction monitoring, and regular compliance reviews."
