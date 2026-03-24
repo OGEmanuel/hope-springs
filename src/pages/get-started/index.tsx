@@ -7,7 +7,7 @@ const GetStartedPage = () => {
     <>
       <GetStartedHero />
       <Insurance />
-      <Banner className="mb-20" />
+      <Banner className="mx-4 mb-20 md:mx-8 xl:mx-30" />
     </>
   );
 };

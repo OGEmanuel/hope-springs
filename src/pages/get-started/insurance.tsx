@@ -27,8 +27,8 @@ const whatToBring = [
 
 const Insurance = () => {
   return (
-    <section className="mb-30 flex justify-center bg-[#FAFAFA]">
-      <div className="flex w-full max-w-360 gap-16 p-30">
+    <section className="mb-30 flex justify-center md:bg-[#FAFAFA]">
+      <div className="flex w-full max-w-360 gap-16 px-4 max-md:flex-col md:px-8 xl:p-30 xl:px-30">
         <div className="flex basis-full flex-col gap-6">
           <Heading
             header="Insurance & Payment"
@@ -36,7 +36,7 @@ const Insurance = () => {
             variant="h2"
             className="[&>div]:text-start"
           />
-          <p className="text-primary leading-7 font-medium">
+          <p className="text-primary leading-7 font-medium max-md:text-sm/6">
             For individuals without insurance or with out-of-network coverage,
             self-pay options may be available. Please contact our office for
             current rates and payment arrangements.
@@ -50,7 +50,7 @@ const Insurance = () => {
             className="[&>div]:text-start"
           />
           <ListData data={whatToBring} />
-          <p className="text-primary leading-7 font-medium">
+          <p className="text-primary leading-7 font-medium max-md:text-sm/6">
             If you need additional support, our team can assist you by phone or
             in person.
           </p>
