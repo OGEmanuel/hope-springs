@@ -10,7 +10,13 @@ const HeroAbout = () => {
         variant="h2"
         className="lg:basis-full [&>*:nth-child(2)]:flex-row-reverse [&>*:nth-child(2)]:justify-end [&>div]:text-start"
       />
-      <div className="h-70 w-full rounded-[8px] bg-[#D9D9D9] sm:h-90 md:h-140 lg:max-w-140 lg:basis-full lg:max-xl:h-90"></div>
+      <div className="h-70 w-full overflow-hidden rounded-[8px] bg-[#D9D9D9] sm:h-90 md:h-140 lg:max-w-140 lg:basis-full lg:max-xl:h-90">
+        <img
+          src="https://res.cloudinary.com/dl56ef7sx/image/upload/v1774317267/about-hero_gb55gg.webp"
+          alt="about-hero"
+          className="size-full object-cover"
+        />
+      </div>
     </section>
   );
 };
