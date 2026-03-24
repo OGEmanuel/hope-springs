@@ -23,7 +23,7 @@ const Heading = (props: {
         ) : variant === 'h4' ? (
           <h4 className="text-xl/7 md:text-[1.75rem]/9">{header}</h4>
         ) : (
-          <h5 className="text-xl/7">{header}</h5>
+          <h5 className="leading-6 md:text-xl/7">{header}</h5>
         )}
         <p className="leading-7 max-md:text-sm/6">{description}</p>
       </div>
