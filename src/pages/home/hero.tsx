@@ -12,7 +12,13 @@ const HeroHome = () => {
           className="[&>*:nth-child(2)]:justify-center"
           cta
         />
-        <div className="h-60 w-full rounded-[8px] bg-[#D9D9D9] sm:h-80 md:h-160"></div>
+        <div className="h-60 w-full overflow-hidden rounded-[8px] bg-[#D9D9D9] sm:h-80 md:h-160">
+          <img
+            src="https://res.cloudinary.com/dl56ef7sx/image/upload/v1774317268/home-hero_k3gdcp.webp"
+            alt="hero"
+            className="size-full object-cover"
+          />
+        </div>
         <div className="border-border text-primary flex w-full items-center justify-between py-6.5 max-md:flex-col-reverse max-md:gap-8 md:border-t md:max-lg:gap-6 lg:pr-20">
           <p className="before:bg-tertiary relative w-full max-w-173.5 text-sm/6 font-medium before:absolute before:h-full before:w-1.5 before:rounded-[6px] md:text-lg/7">
             <span className="block pl-5.5 lg:pl-12">
