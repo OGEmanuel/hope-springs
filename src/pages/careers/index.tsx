@@ -6,8 +6,8 @@ import CareersForm from './form';
 const CareersPage = () => {
   return (
     <section className="flex justify-center">
-      <div className="flex w-full max-w-360 flex-col gap-30 p-30">
-        <div className="flex flex-1 gap-16">
+      <div className="flex w-full max-w-360 flex-col gap-30 px-4 pt-14 md:px-8 xl:p-30 xl:px-30">
+        <div className="flex flex-1 gap-16 max-md:flex-col">
           <div className="flex flex-col gap-8">
             <Heading
               header="Join the team"

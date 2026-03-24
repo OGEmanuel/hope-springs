@@ -125,7 +125,12 @@ const CareersForm = () => {
         )}
       </form.AppField>
       <form.AppField name="phoneNumber">
-        {field => <field.PhoneField label="Phone number" />}
+        {field => (
+          <field.PhoneField
+            label="Phone number"
+            className="max-md:col-[1/span_2]"
+          />
+        )}
       </form.AppField>
       <form.AppField name="emailAddress">
         {field => (
@@ -133,6 +138,7 @@ const CareersForm = () => {
             label="Email address"
             placeholder="Your@email.com"
             type="email"
+            className="max-md:col-[1/span_2]"
           />
         )}
       </form.AppField>
