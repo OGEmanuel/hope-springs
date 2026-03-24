@@ -53,7 +53,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="bg-background font-sans wrap-anywhere antialiased">
         <TanStackQueryProvider>
           <Header />
-          <main className="pt-22">{children}</main>
+          <main className="pt-18.25 md:pt-22">{children}</main>
           <Footer />
           <TanStackDevtools
             config={{
