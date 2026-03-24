@@ -1,18 +1,21 @@
 import Heading from '#/components/Heading';
+import CheckShield from '#/components/jsx-icons/check-shield';
+import LinkIcon from '#/components/jsx-icons/link-icon';
 import PeopleIcon from '#/components/jsx-icons/people-icon';
+import PersonIcon from '#/components/jsx-icons/person-icon';
 import { cn } from '#/lib/utils';
 
 const approachData = [
   {
     id: 1,
-    icon: <PeopleIcon />,
+    icon: <CheckShield />,
     header: 'Trauma-Informed',
     description:
       'We recognize that trauma shapes how individuals feel, think, and engage with treatment.',
   },
   {
     id: 2,
-    icon: <PeopleIcon />,
+    icon: <PersonIcon />,
     header: 'Person-Centered',
     description:
       'Treatment plans are not imposed — they are built collaboratively.',
@@ -26,7 +29,7 @@ const approachData = [
   },
   {
     id: 4,
-    icon: <PeopleIcon />,
+    icon: <LinkIcon />,
     header: 'Integrated and Coordinated',
     description:
       'We collaborate across care systems to reduce fragmentation and support continuity.',
