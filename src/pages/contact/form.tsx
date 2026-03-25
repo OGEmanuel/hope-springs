@@ -1,4 +1,6 @@
 import { useAppForm } from '#/hooks/form';
+import useSendRequest from '#/hooks/form-submit';
+import { MUTATIONS } from '#/lib/queries';
 import { revalidateLogic } from '@tanstack/react-form';
 import z from 'zod';
 
@@ -26,12 +28,51 @@ const ContactForm = () => {
       fullName: '',
       phoneNumber: '',
       emailAddress: '',
-      insuranceProvider: '',
+      insuranceProvider: undefined,
       message: '',
     } as formSchemaType,
     validationLogic: revalidateLogic(),
     validators: {
       onSubmit: formSchema,
+    },
+    onSubmit: ({ value }) => {
+      mutate({
+        fullName: value.fullName,
+        phoneNumber: value.phoneNumber,
+        emailAddress: value.emailAddress,
+        insuranceProvider: value.insuranceProvider,
+        message: value.message,
+      });
+    },
+  });
+
+  const { mutate, isPending } = useSendRequest<
+    {
+      fullName: string;
+      phoneNumber: string;
+      emailAddress: string;
+      insuranceProvider?: string;
+      message: string;
+    },
+    any
+  >({
+    mutationFn: (data: {
+      fullName: string;
+      phoneNumber: string;
+      emailAddress: string;
+      insuranceProvider?: string;
+      message: string;
+    }) => MUTATIONS.sendContact(data),
+    successToast: {
+      title: 'Success',
+      description: 'Your message has been sent successfully.',
+    },
+    errorToast: {
+      title: 'Error',
+      description: 'An unexpected error occurred. Please try again.',
+    },
+    onSuccessCallback: () => {
+      form.reset();
     },
   });
 
@@ -78,7 +119,7 @@ const ContactForm = () => {
       <div className="flex flex-col gap-4">
         <div className="flex justify-end">
           <form.AppForm>
-            <form.SubscribeButton label="Send message" />
+            <form.SubscribeButton isPending={isPending} label="Send message" />
           </form.AppForm>
         </div>
         <p className="text-sm/6 text-[#717171]">

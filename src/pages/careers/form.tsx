@@ -1,4 +1,6 @@
 import { useAppForm } from '#/hooks/form';
+import useSendRequest from '#/hooks/form-submit';
+import { MUTATIONS } from '#/lib/queries';
 import { revalidateLogic, useField } from '@tanstack/react-form';
 import { useState } from 'react';
 import z from 'zod';
@@ -56,11 +58,50 @@ const CareersForm = () => {
     validators: {
       onSubmit: formSchema,
     },
+    onSubmit: ({ value }) => {
+      mutate({
+        fullName: value.fullName,
+        phoneNumber: value.phoneNumber,
+        emailAddress: value.emailAddress,
+        position: value.position,
+        resume: value.resume,
+      });
+    },
   });
 
   const resume = useField({
     form,
     name: 'resume',
+  });
+
+  const { mutate, isPending } = useSendRequest<
+    {
+      fullName: string;
+      phoneNumber: string;
+      emailAddress: string;
+      position: string;
+      resume: File[];
+    },
+    any
+  >({
+    mutationFn: (data: {
+      fullName: string;
+      phoneNumber: string;
+      emailAddress: string;
+      position: string;
+      resume: File[];
+    }) => MUTATIONS.sendCareer(data),
+    successToast: {
+      title: 'Success',
+      description: 'Your application has been sent successfully.',
+    },
+    errorToast: {
+      title: 'Error',
+      description: 'An unexpected error occurred. Please try again.',
+    },
+    onSuccessCallback: () => {
+      form.reset();
+    },
   });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -171,7 +212,7 @@ const CareersForm = () => {
       </form.AppField>
       <div className="col-[1/span_2] flex justify-end">
         <form.AppForm>
-          <form.SubscribeButton label="Send message" />
+          <form.SubscribeButton isPending={isPending} label="Send message" />
         </form.AppForm>
       </div>
     </form>

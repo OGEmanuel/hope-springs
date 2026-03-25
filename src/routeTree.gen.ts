@@ -15,6 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EmailApiContactRouteImport } from './routes/email/api.contact'
+import { Route as EmailApiCareerRouteImport } from './routes/email/api.career'
 
 const GettingStartedRoute = GettingStartedRouteImport.update({
   id: '/getting-started',
@@ -46,6 +48,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmailApiContactRoute = EmailApiContactRouteImport.update({
+  id: '/email/api/contact',
+  path: '/email/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailApiCareerRoute = EmailApiCareerRouteImport.update({
+  id: '/email/api/career',
+  path: '/email/api/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +66,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/getting-started': typeof GettingStartedRoute
+  '/email/api/career': typeof EmailApiCareerRoute
+  '/email/api/contact': typeof EmailApiContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +76,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/getting-started': typeof GettingStartedRoute
+  '/email/api/career': typeof EmailApiCareerRoute
+  '/email/api/contact': typeof EmailApiContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +87,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/getting-started': typeof GettingStartedRoute
+  '/email/api/career': typeof EmailApiCareerRoute
+  '/email/api/contact': typeof EmailApiContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +99,18 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/getting-started'
+    | '/email/api/career'
+    | '/email/api/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/careers' | '/contact' | '/faqs' | '/getting-started'
+  to:
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/contact'
+    | '/faqs'
+    | '/getting-started'
+    | '/email/api/career'
+    | '/email/api/contact'
   id:
     | '__root__'
     | '/'
@@ -91,6 +119,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/getting-started'
+    | '/email/api/career'
+    | '/email/api/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -100,6 +130,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
   GettingStartedRoute: typeof GettingStartedRoute
+  EmailApiCareerRoute: typeof EmailApiCareerRoute
+  EmailApiContactRoute: typeof EmailApiContactRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -146,6 +178,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/email/api/contact': {
+      id: '/email/api/contact'
+      path: '/email/api/contact'
+      fullPath: '/email/api/contact'
+      preLoaderRoute: typeof EmailApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/email/api/career': {
+      id: '/email/api/career'
+      path: '/email/api/career'
+      fullPath: '/email/api/career'
+      preLoaderRoute: typeof EmailApiCareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -156,6 +202,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
   GettingStartedRoute: GettingStartedRoute,
+  EmailApiCareerRoute: EmailApiCareerRoute,
+  EmailApiContactRoute: EmailApiContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
