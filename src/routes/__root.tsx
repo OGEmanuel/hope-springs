@@ -7,6 +7,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { Toaster } from '@/components/ui/sonner';
 
 import TanStackQueryProvider from '../integrations/tanstack-query/root-provider';
 
@@ -73,7 +74,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="bg-background font-sans wrap-anywhere antialiased">
         <TanStackQueryProvider>
+          <Toaster position="top-right" className="sm:hidden" />
+          <Toaster className="max-sm:hidden" />
           <Header />
+
           <main className="pt-18.25 md:pt-22">{children}</main>
           <Footer />
           <TanStackDevtools

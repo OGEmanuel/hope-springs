@@ -11,13 +11,16 @@ import * as ShadcnSelect from '#/components/ui/select';
 import { Label } from '#/components/ui/label';
 import { cn } from '#/lib/utils';
 import FileIcon from './jsx-icons/file';
+import { Loader2 } from 'lucide-react';
 
 export function SubscribeButton({
   label,
   className,
+  isPending,
 }: {
   label: string;
   className?: string;
+  isPending?: boolean;
 }) {
   const form = useFormContext();
   return (
@@ -25,10 +28,10 @@ export function SubscribeButton({
       {isSubmitting => (
         <Button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isPending}
           className={cn('w-full', className)}
         >
-          {label}
+          {isPending ? <Loader2 className="animate-spin" /> : label}
         </Button>
       )}
     </form.Subscribe>
