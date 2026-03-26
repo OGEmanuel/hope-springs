@@ -41,9 +41,9 @@ const Approach = () => {
     <section className="bg-extra-2 mb-20 flex flex-col items-center gap-16 px-4 pt-20 pb-20 text-white max-md:-mx-4 sm:pb-30 md:gap-30 md:rounded-[8px] md:px-20 md:shadow-[0px_28px_48px_0px_#05201026] lg:mb-51">
       <Heading
         header="Our Approach to Care"
-        description="Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+        description="Our team of dedicated professionals is trained in the latest evidence-based practices."
         variant="h2"
-        className="[&>div]:gap-6 [&>div]:text-white"
+        className="[&_p]:w-full [&_p]:max-w-120 [&_p]:text-center [&>div]:items-center [&>div]:gap-6 [&>div]:text-white"
       />
       <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
         {approachData.slice(0, 2).map((data, i) => (
