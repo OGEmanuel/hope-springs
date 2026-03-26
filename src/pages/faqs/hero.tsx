@@ -4,7 +4,7 @@ const FaqsHero = () => {
   return (
     <Heading
       header="Frequently Asked Questions"
-      description="Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+      description="Find answers to common questions about our mental health and substance use disorder services, including treatment options, eligibility, insurance coverage, and crisis support."
       variant="h1"
     />
   );

@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import LogoFull from './jsx-icons/logo-full';
+import { link } from 'fs';
 
 const companyLinks = [
   { name: 'About us', href: '/about' },
@@ -15,6 +16,17 @@ const resourcesLinks = [
 const contactLinks = [
   { name: '240-960-7515', href: 'tel:2409607515' },
   { name: 'hopespring@gmail.com', href: 'mailto:hopespring@gmail.com' },
+];
+
+const addressLinks = [
+  {
+    name: '3434 Rockefeller Court, Waldorf, Maryland 20602',
+    link: 'https://www.google.com/maps/search/434+Rockefeller+Court,+Waldorf,+Maryland+20602/@38.6175218,-76.9122096,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    name: '2603 Baker Street, Baltimore Maryland 21227',
+    link: 'https://www.google.com/maps/place/2603+Baker+St,+Baltimore,+MD+21216,+USA/@39.3059878,-76.6628423,17z/data=!3m1!4b1!4m6!3m5!1s0x89c81b430a7a5ed5:0xaa3b5d3819191e63!8m2!3d39.3059878!4d-76.6602674!16s%2Fg%2F11bw3zfm69?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D',
+  },
 ];
 
 export default function Footer() {
@@ -54,7 +66,11 @@ export default function Footer() {
           </ul>
           <ul>
             Location
-            <li>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            {addressLinks.map(link => (
+              <li key={link.name}>
+                <Link to={link.link}>{link.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="text-extra flex justify-between pt-10 pb-12 max-sm:flex-col max-sm:gap-6 max-sm:text-sm sm:items-center">

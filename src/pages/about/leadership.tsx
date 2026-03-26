@@ -4,7 +4,13 @@ const Leadership = () => {
   return (
     <section className="flex gap-12 pb-40 max-md:flex-col-reverse md:items-center lg:gap-16">
       <div className="border-border flex flex-col items-center gap-6 rounded-[8px] border px-2 pt-2 pb-6 md:p-4 md:max-xl:basis-full xl:flex-1">
-        <div className="h-70 w-full rounded bg-[#D9D9D9] sm:h-80 md:h-100 md:max-w-md md:rounded-[8px]"></div>
+        <div className="h-70 w-full rounded bg-[#D9D9D9] sm:h-80 md:h-100 md:max-w-md md:rounded-[8px]">
+          <img
+            src="https://res.cloudinary.com/dl56ef7sx/image/upload/v1774531991/leadership_bvllau.webp"
+            alt="leadership"
+            className="size-full object-cover"
+          />
+        </div>
         <Heading
           header="Olasunkanmi (Ola) Atoki"
           description="Owner & Executive Director"
