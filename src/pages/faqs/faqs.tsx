@@ -55,11 +55,11 @@ const Faqs = () => {
     <Accordion
       type="single"
       collapsible
-      defaultValue="item-1"
       className="flex w-full max-w-200 flex-col gap-8"
     >
       {faqsData.map(data => (
         <AccordionItem
+          key={data.id}
           value={`item-${data.id}`}
           className="text-primary flex flex-col gap-3 border-black/10"
         >
