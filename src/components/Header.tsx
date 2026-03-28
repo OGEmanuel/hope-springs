@@ -52,7 +52,7 @@ export const MobileNav = (props: {
 
   return (
     <Sheet open={open} onOpenChange={onSetOpen}>
-      <SheetTrigger className="sm:hidden">{children}</SheetTrigger>
+      <SheetTrigger className="lg:hidden">{children}</SheetTrigger>
       <SheetContent
         side="right"
         className="mt-18.25 h-[calc(100vh-73px)] w-full gap-10 border-0 px-5 [&>button]:hidden"
